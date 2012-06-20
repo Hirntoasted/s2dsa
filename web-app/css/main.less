@@ -1,0 +1,97 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	color: #000000;
+	font-size: 14px;
+}
+body {
+	background-color: #007b25;
+}
+#content {
+	.header {
+		.panel;
+		& .message {
+			float: left;
+		}
+		& .logincontrol {
+			float: right;
+			& .participant {
+				font-weight: bold;
+			}
+		}
+	}
+	.new, .unlock {
+		width: 400px;
+		position: absolute;
+		top:20%;
+		left: -200px;
+		margin-left: 50%;
+		.panel;
+		&.hidden {
+			display: none;
+		}
+	}
+	.players {
+		width: 100%;
+		height: 100%;
+		list-style: none;
+		&>li {
+			float: left;
+			width: 150px;
+			height: auto;
+			margin: 30px 50px;
+			background-color: #ffffff;
+			& img {
+				width: 100%;
+			}
+			& .name {
+				display: block;
+				font-weight: bold;
+				text-align: center;
+			}
+			& .department {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+.clear {
+	clear: both;
+}
+.panel {
+	background-color: #000000;
+	padding: 20px 30px;
+	color: #ffffff;
+	.font {
+		color: #ffffff;
+	}
+	& h1, & p, & td, & div, & span {
+		.font;
+	}
+	& input {
+		.font;
+		padding: 10px;
+		margin: 2px;
+		background-color: #ffffff;
+		&[type=text], &[type=email], &[type=password] {
+			color: #000000;
+			border: 2px solid #999999;
+		}
+		&[type=submit] {
+			.font;
+			cursor: pointer;
+			background-color: #999999;
+		}
+	}
+	& a, & .button {
+		.font;
+		padding: 10px;
+		margin: 2px;
+		cursor: pointer;
+		text-decoration: none;
+		color: #ffffff;
+		background-color: #999999;
+	}
+}
