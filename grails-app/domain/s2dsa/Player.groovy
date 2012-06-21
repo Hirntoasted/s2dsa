@@ -4,6 +4,7 @@ class Player {
 	static hasMany = [unlockedBy: UnlockedPlayer]
 	
 	String name
+	String about
 	String department
 	String secret
 	String s2name

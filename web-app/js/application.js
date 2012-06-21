@@ -1,3 +1,5 @@
+var activeClass = "active";
+
 if (typeof jQuery !== 'undefined') {
 	(function($) {
 		$('#spinner').ajaxStart(function() {
@@ -8,10 +10,8 @@ if (typeof jQuery !== 'undefined') {
 	})(jQuery);
 }
 
-$(".players").on("click", ".locked", function(){
-	$(".unlock").removeClass("hidden");
-});
-
-$(".unlock").on("click", ".reset", function(){
-	$(".unlock").addClass("hidden");
+$(".footer").on("click", ".button:not[.active]", function(){
+	var $this = $(this);
+	$this.addClass(activeClass).siblings().removeClass(activeClass);
+	$([".tabs .", $this.data("tab")].join("")).addClass(activeClass).siblings().removeClass(activeClass);
 });

@@ -4,7 +4,6 @@ class Participant {
 	static hasMany = [unlockedPlayers: UnlockedPlayer]
 	
 	String username
-	String password
 	
 	def hasUnlockedPlayer(Player player) {
 		def found = false
@@ -18,6 +17,5 @@ class Participant {
 	
     static constraints = {
 		username unique: true, blank: false
-		password blank:false
     }
 }
