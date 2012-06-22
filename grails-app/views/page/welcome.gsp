@@ -12,12 +12,10 @@
 		Dann gewinnen! Lorem ipsum dolor sit
 		amet.
 	</p>
-	<div class="footer">
-		<g:form name="loginForm" class="loginForm" controller="login" action="login">
-			<h1>Dein S2-Kürzel</h1>
-			<g:field type="text" name="username" required="true" />
-			<g:submitButton name="login" value="Anpfiff." />
-		</g:form>
-	</div>
+	<g:form name="loginForm" class="loginForm" controller="login" action="login">
+		<h1>Dein S2-Kürzel</h1>
+		<g:field type="text" name="username" required="true" />
+		<g:submitButton name="login" value="Anpfiff." />
+	</g:form>
 </body>
 </html>
