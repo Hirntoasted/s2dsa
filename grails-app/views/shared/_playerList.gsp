@@ -8,5 +8,5 @@
 	</g:else>
 </p>
 <ul class="players">
-	<g:render template="/shared/playerTemplate" collection="${unlockedPlayers}" var="player" />
+	<g:render template="/shared/playerTemplate" collection="${unlockedPlayers}" var="unlockedPlayer" />
 </ul>

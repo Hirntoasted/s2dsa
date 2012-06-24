@@ -9,7 +9,7 @@ class LoginController {
 		if(participant) {
 			flash.message = "Willkommen zurück " + participant.username
 		} else {
-			participant = new Participant(username: params.username, password: params.password)
+			participant = new Participant(username: params.username, unlockedPlayerCount: 0, lastUpdate: new Date())
 			if (participant.save(insert: true)) {
 				flash.message = "Willkommen " + participant.username
 			}

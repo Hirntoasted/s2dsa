@@ -8,7 +8,7 @@
 	<div class="tabs">
 		<div class="transfer active">
 			<p>
-				Hallo ${participant.username},
+				Hallo ${participant.username},<br />
 				toll, dass du dein Sammelalbum
 				aufgemacht hast. Jetzt kann's ja
 				losgehen.
@@ -27,9 +27,9 @@
 		</div>
 	</div>
 	<div class="footer">
-		<div class="button active" data-tab="transfer">Transfer</div>
-		<div class="button" data-tab="players"><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</div>
-		<div class="button" data-tab="topList">Top 3</div>
+		<div class="button active" data-tab="transfer"><span>Transfer</span></div>
+		<div class="button" data-tab="players"><span><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</span></div>
+		<div class="button" data-tab="topList"><span>Top 3</span></div>
 	</div>
 </body>
 </html>

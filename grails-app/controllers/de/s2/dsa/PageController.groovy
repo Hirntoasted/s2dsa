@@ -18,7 +18,8 @@ class PageController {
 		}
 		def players = Player.findAll()
 		def participant = Participant.get(session.participant.id)
-		def topList = ["maxmus", "karmus", "ralmus"]
+		def topList = Participant.findAll("from Participant as p order by p.unlockedPlayerCount desc, p.lastUpdate asc", [max: 3, offset: 0])
+		
 		[participant: participant, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList]
 	}
 	
@@ -27,10 +28,16 @@ class PageController {
 			def player = Player.findBySecret(params.secret);
 			def part = Participant.get(session.participant.id)
 			if (player) {
-				def res = part
-					.addToUnlockedPlayers(new UnlockedPlayer(unlockedBy: session.participant, player: player, unlockTime: new Date()))
-					.save()
-				if (res) {
+				for (UnlockedPlayer unlockedPlayer : part.unlockedPlayers) {
+					if (unlockedPlayer.player == player) {
+						flash.message = "Diesen Spieler hast du schon"
+						return redirect(action: "index")
+					}
+				}
+				part.addToUnlockedPlayers(new UnlockedPlayer(unlockedBy: session.participant, player: player))
+				part.setUnlockedPlayerCount(part.getUnlockedPlayerCount()+1)
+				part.setLastUpdate(new Date())
+				if (part.save()) {
 					flash.message = "Spieler erfolgreich freigeschaltet"
 				} else {
 					flash.message = session.participant.errors

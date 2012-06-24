@@ -1,9 +1,13 @@
 package s2dsa
 
+import java.util.Date;
+
 class Participant {
 	static hasMany = [unlockedPlayers: UnlockedPlayer]
 	
 	String username
+	Integer unlockedPlayerCount
+	Date lastUpdate
 	
 	def hasUnlockedPlayer(Player player) {
 		def found = false
