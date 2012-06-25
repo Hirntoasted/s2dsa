@@ -19,8 +19,9 @@ class PageController {
 		def players = Player.findAll()
 		def participant = Participant.get(session.participant.id)
 		def topList = Participant.findAll("from Participant as p order by p.unlockedPlayerCount desc, p.lastUpdate asc", [max: 3, offset: 0])
+		def activeTab = params.activeTab ? params.activeTab : 'transfer'
 		
-		[participant: participant, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList]
+		[participant: participant, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList, activeTab: activeTab]
 	}
 	
 	def unlock() {
@@ -39,6 +40,7 @@ class PageController {
 				part.setLastUpdate(new Date())
 				if (part.save()) {
 					flash.message = "Spieler erfolgreich freigeschaltet"
+					return redirect(action: "index", params: [activeTab: 'players'])
 				} else {
 					flash.message = session.participant.errors
 				}
