@@ -27,9 +27,13 @@
 		</div>
 	</div>
 	<div class="footer">
-		<div class="button${activeTab == 'transfer' ? ' active' : ''}" data-tab="transfer"><span>Transfer</span></div>
-		<div class="button${activeTab == 'players' ? ' active' : ''}" data-tab="players"><span><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</span></div>
-		<div class="button${activeTab == 'topList' ? ' active' : ''}" data-tab="topList"><span>Top 3</span></div>
+		<table>
+			<tr>
+				<td class="button${activeTab == 'transfer' ? ' active' : ''}" data-tab="transfer"><span>Transfer</span></td>
+				<td class="button${activeTab == 'players' ? ' active' : ''}" data-tab="players"><span><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</span>
+				<td class="button${activeTab == 'topList' ? ' active' : ''}" data-tab="topList"><span>Top 3</span>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

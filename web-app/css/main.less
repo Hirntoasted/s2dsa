@@ -1,7 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
-	border: 0;
+	border: 0 none transparent;
 	color: #000000;
 	font-size: 20px;
 	font-family: 'Raleway', cursive;
@@ -59,27 +59,29 @@ form {
 		position: fixed;
 		bottom: 0px;
 		left: 0px;
-		width: 100%;
-		cursor: pointer;
-		& .button {
-			width: 33.333333333%;
-			height: 3em;
-			float: left;
-			&>span {
-				display: block;
-				padding: 1.5em 0.1em 0.5em;
+		& table {
+			width: 100%;
+			background-color: #ffffff;
+			border-spacing: 0.1em;
+			& .button {
+				cursor: pointer;
+				width: 33.33333%;
+				height: 3em;
 				background-color: #a5bfd4;
-				color: #ffffff;
-				font-weight: bold;
 				text-align: center;
 				vertical-align: bottom;
-				text-transform: uppercase;
-				& span {
+				padding: 0 0.1em 0.1em;
+				&>span {
 					color: #ffffff;
+					font-weight: bold;
+					text-transform: uppercase;
+					& span {
+						color: #ffffff;
+					}
 				}
-			}
-			&.active>span {
-				background-color: #1d5f94;
+				&.active {
+					background-color: #1d5f94;
+				}
 			}
 		}
 	}
