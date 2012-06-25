@@ -5,6 +5,6 @@
 </p>
 <ul class="toplist">
 	<g:each in="${topList}" var="participant" status="idx">
-		<li><span>${idx+1}</span>${participant.username}</li>
+		<li><span>${idx+1}</span>${participant.username} (${participant.unlockedPlayerCount}&nbsp;/&nbsp;${playerCount})</li>
 	</g:each>
 </ul>
