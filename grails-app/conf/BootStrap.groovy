@@ -6,14 +6,30 @@ class BootStrap {
     def init = { servletContext ->
 		switch(GrailsUtil.environment){
 			case "development":
-				def framus = new Player(name: "Franz Mustermann", about: "Bla", department: "Development", secret: "hallo123", s2name: "framus")
-				framus.save()
-				def karmus = new Player(name: "Karl Mustermann", about: "Blubb", department: "Development", secret: "hallo456", s2name: "karmus")
-				karmus.save()
-				def maxmus = new Player(name: "Max Mustermann", about: "Blubberererer", department: "Development", secret: "hallo789", s2name: "maxmus")
-				maxmus.save()
+				def test_1 = new Player(name: "Franz Mustermann", about: "Bla", department: "Development", secret: "hallo123", s2name: "test_1")
+				test_1.save()
+				def test_2 = new Player(name: "Karl Mustermann", about: "Blubb", department: "Development", secret: "hallo456", s2name: "test_2")
+				test_2.save()
+				def test_3 = new Player(name: "Max Mustermann", about: "Blubberererer", department: "Development", secret: "hallo789", s2name: "test_3")
+				test_3.save()
 			break
 			case "production":
+				def lukkaw = new Player(name: "Lukas Kawerau", about: "The Times They Are A-Changin!", department: "Praktikant Insight & Strategy", secret: "apache", s2name: "lukkaw")
+                                lukkaw.save()
+				def larsch = new Player(name: "Lars Schüttemeyer", about: "Lachen ist gesund!", department: "Simyo Developer (Student)", secret: "pingpong", s2name: "larsch")
+                                larsch.save()
+				def annkru = new Player(name: "Annika Krüger", about: "Ich liebe die Schiffe, das Meer und den Hafen! Bin ein nordisches Deern und ich komm voll ins schwärm', wenn ich hüpf und spring und von Hamburg sing!", department: "Controlling", secret: "schnickschnack", s2name: "annkru")
+                                annkru.save()
+				def simhei = new Player(name: "Simone Heilmann", about: "Sei ein Sonnenschein durchs ganze Leben, denn der Sonne hat, kann Sonne geben.", department: "Account Management (Team: TUIfly.com)", secret: "krebs", s2name: "simhei")
+                                simhei.save()
+				def corerb = new Player(name: "Cornelia Erbs", about: "Nenn mich gern Conni – mit \"i\".", department: "Senior User Experience Architect – Kreation Team 1", secret: "nordhessin", s2name: "corerb")
+                                corerb.save()
+				def marspo = new Player(name: "Martina Spöhrer", about: "Wann wird's mal wieder richtig Sommer...", department: "Controlling", secret: "radau", s2name: "marspo")
+                                marspo.save()
+				def andoll = new Player(name: "Andreas Ollesch", about: "Es ist nicht deine Schuld, dass die Welt ist, wie sie ist, Es wär nur deine Schuld, wenn sie so bleibt", department: "Betrieb / Operations", secret: "eifel", s2name: "andoll")
+                                andoll.save()
+				def peghut = new Player(name: "Peggy Hutchinson", about: " Das leben ist ein Ponyhof ,-manchmal", department: "Abteilung HR, Personalleitung", secret: "pedgy", s2name: "peghut")
+                                peghut.save()
 			break
 		}
     }
