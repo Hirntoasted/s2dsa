@@ -10,7 +10,7 @@ if (typeof jQuery !== 'undefined') {
 	})(jQuery);
 }
 
-$(".message").addClass("hide");
+$(".message.fadeout").addClass("hide");
 $(".footer").on("click", ".button:not[.active]", function(){
 	var $this = $(this);
 	$this.addClass(activeClass).siblings().removeClass(activeClass);

@@ -5,6 +5,23 @@
 <r:require module="application" />
 </head>
 <body>
+	<g:if test="${uwin}">
+		<div class="message">
+			<span>Wir gratulieren! Du bist der Erste, der sein Sammelalbum voll hat!</span>
+			<span class="small">
+				Gehe nun mit dieser Meldung zu einem von den Neuen – und wir
+				überreichen dir deinen Spitzenüberraschungspreis!
+			</span>
+		</div>
+	</g:if>
+	<g:elseif test="${ulose}">
+		<div class="message">
+			<span>
+				Wir gratulieren! Du kennst jetzt alle neuen Spieler. Leider war jemand
+				anderes schneller als du.
+			</span>
+		</div>
+	</g:elseif>
 	<div class="tabs">
 		<div class="transfer${activeTab == 'transfer' ? ' active' : ''}">
 			<p>

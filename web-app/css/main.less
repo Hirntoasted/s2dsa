@@ -17,6 +17,9 @@ h1 {
 ul {
 	list-style: none;
 }
+ol {
+	margin-left: 2em;
+}
 form {
 	text-align: center;
 	padding-bottom: 4em;
@@ -161,14 +164,23 @@ form {
 		}
 	}
 	& .message {
-		height: 2em;
-		padding: 1em 0 0;
+		margin-top: 1em;
 		text-align: center;
-		font-weight: bold;
-		overflow: hidden;
-		.scroll-up;
-		&.hide {
-			height: 0;
+		background-color: #ffd479;
+		&>span {
+			display: block;
+			padding: 0.1em 0.5em;
+			&.small {
+				font-size: 13px;
+			}
+		}
+		&.fadeout {
+			height: 2em;
+			.scroll-up;
+			&.hide {
+				height: 0;
+				overflow: hidden;
+			}
 		}
 	}
 	& p {

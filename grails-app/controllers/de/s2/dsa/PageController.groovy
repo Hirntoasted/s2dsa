@@ -21,8 +21,26 @@ class PageController {
 		def topList = Participant.findAll("from Participant as p order by p.unlockedPlayerCount desc, p.lastUpdate asc", [max: 3, offset: 0])
 		def activeTab = params.activeTab ? params.activeTab : 'transfer'
 		def mockedUnlockedPlayerList = buildMockedUnlockedPlayerList(participant.unlockedPlayers)
-		
-		[participant: participant, unlockedPlayerList: mockedUnlockedPlayerList, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList, activeTab: activeTab]
+		def uwin = checkUwin(participant, participant.unlockedPlayers.size(), players.size(), topList)
+		def ulose = checkUlose(participant, participant.unlockedPlayers.size(), players.size(), topList)
+		[
+			participant: participant,
+			unlockedPlayerList: mockedUnlockedPlayerList,
+			unlockedPlayerCount: participant.unlockedPlayers.size(),
+			playerCount: players.size(),
+			topList: topList,
+			activeTab: activeTab,
+			uwin: uwin,
+			ulose : ulose
+		]
+	}
+	
+	def checkUwin (participant, playerCount, unlockedPlayerCount, topList) {
+		unlockedPlayerCount == playerCount && participant == topList.get(0)
+	}
+	
+	def checkUlose (participant, playerCount, unlockedPlayerCount, topList) {
+		unlockedPlayerCount == playerCount && participant != topList.get(0)
 	}
 	
 	def buildMockedUnlockedPlayerList(unlockedPlayerList) {
@@ -34,7 +52,7 @@ class PageController {
 				}
 			}
 		}
-		return mock;
+		mock;
 	}
 	
 	def unlock() {

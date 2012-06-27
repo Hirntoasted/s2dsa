@@ -26,7 +26,7 @@
 				<span>made by SinnerSchrader und Gelber Hund</span>
 			</div>
 			<g:if test="${flash.message}">
-				<div class="message">${flash.message}</div>
+				<div class="message fadeout"><span>${flash.message}</span></div>
 			</g:if>
 			<g:layoutBody/>
 		</div>
