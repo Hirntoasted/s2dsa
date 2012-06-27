@@ -7,6 +7,10 @@
 		<span class="unlockedsCount">${unlockedPlayerCount}</span> von ${playerCount} haste schon gesammelt:
 	</g:else>
 </p>
-<ul class="players">
-	<g:render template="/shared/playerTemplate" collection="${unlockedPlayers}" var="unlockedPlayer" />
-</ul>
+<div class="playerlist">	
+	<ul class="players" style="width:${unlockedPlayerCount * 100}%;left:-${unlockedPlayerCount *50}%;">
+		<g:each var="unlockedPlayer" in="${unlockedPlayers}" status="playerIndex">
+			<g:render template="/shared/playerTemplate" model="['unlockedPlayer': unlockedPlayer, 'unlockedPlayerCount': unlockedPlayerCount, 'playerIndex': playerIndex]" />
+		</g:each>
+	</ul>
+</div>

@@ -95,9 +95,28 @@ form {
 				display: block;
 			}
 		}
-		& .players {
-			&>li {
-				float: left;
+		& .playerlist {
+			position: relative;
+			width: 80%;
+			height: 400px;
+			overflow: hidden;
+			margin: 0 auto;
+			& .players {
+				position: absolute;
+				top: 0;
+				margin-left: 50%;
+				&>li {
+					display: none;
+					position: absolute;
+					top: 0;
+					& img {
+						width: 600px;
+						height: 400px;
+					}
+					&.active {
+						display: block;
+					}
+				}
 			}
 		}
 		& .toplist {
