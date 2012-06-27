@@ -14,7 +14,7 @@ class PageController {
 	
     def index() {
 		if (!session.participant) {
-			return redirect(action: "welcome")
+			return redirect(uri: "/")
 		}
 		def players = Player.findAll()
 		def participant = Participant.get(session.participant.id)

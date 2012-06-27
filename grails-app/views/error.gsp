@@ -1,11 +1,13 @@
-<!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-	<head>
-		<title>Grails Runtime Exception</title>
-		<meta name="layout" content="main">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'errors.css')}" type="text/css">
-	</head>
-	<body>
+<head>
+<meta name="layout" content="main" />
+<r:require module="application" />
+<title>Grails Runtime Exception</title>
+</head>
+<body>
+	<p>
 		<g:renderException exception="${exception}" />
-	</body>
+	</p>
+</body>
 </html>
