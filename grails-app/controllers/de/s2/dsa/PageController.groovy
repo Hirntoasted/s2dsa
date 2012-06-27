@@ -20,8 +20,21 @@ class PageController {
 		def participant = Participant.get(session.participant.id)
 		def topList = Participant.findAll("from Participant as p order by p.unlockedPlayerCount desc, p.lastUpdate asc", [max: 3, offset: 0])
 		def activeTab = params.activeTab ? params.activeTab : 'transfer'
+		def mockedUnlockedPlayerList = buildMockedUnlockedPlayerList(participant.unlockedPlayers)
 		
-		[participant: participant, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList, activeTab: activeTab]
+		[participant: participant, unlockedPlayerList: mockedUnlockedPlayerList, unlockedPlayerCount: participant.unlockedPlayers.size(), playerCount: players.size(), topList: topList, activeTab: activeTab]
+	}
+	
+	def buildMockedUnlockedPlayerList(unlockedPlayerList) {
+		def mock = []
+		if (unlockedPlayerList.size() > 0) {
+			while (mock.size() < 4) {
+				unlockedPlayerList.each {
+					mock.add(it);
+				}
+			}
+		}
+		return mock;
 	}
 	
 	def unlock() {

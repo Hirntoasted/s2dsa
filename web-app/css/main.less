@@ -64,6 +64,7 @@ form {
 			background-color: #ffffff;
 			border-spacing: 0.1em;
 			& .button {
+				position: relative;
 				cursor: pointer;
 				width: 33.33333%;
 				height: 3em;
@@ -78,9 +79,18 @@ form {
 					& span {
 						color: #ffffff;
 					}
+					&.marker {
+						display: none;
+						position: absolute;
+						top: -0.5em;
+						left: 1em;
+					}
 				}
 				&.active {
 					background-color: #1d5f94;
+					& .marker {
+						display: block;
+					}
 				}
 			}
 		}
@@ -97,24 +107,35 @@ form {
 		}
 		& .playerlist {
 			position: relative;
-			width: 80%;
-			height: 400px;
-			overflow: hidden;
-			margin: 0 auto;
+			&>div {
+				position: relative;
+				width: 80%;
+				height: 400px;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+			& .pager {
+				position: absolute;
+				top: 50%;
+				cursor: pointer;
+				font-size: 32px;
+				&.prev {
+					left: 5%;
+				}
+				&.next {
+					right: 5%;
+				}
+			}
 			& .players {
 				position: absolute;
 				top: 0;
 				margin-left: 50%;
+				.slide;
 				&>li {
-					display: none;
 					position: absolute;
 					top: 0;
 					& img {
-						width: 600px;
-						height: 400px;
-					}
-					&.active {
-						display: block;
+						width: 100%;
 					}
 				}
 			}
@@ -156,6 +177,13 @@ form {
 }
 
 .scroll-up (@property: height, @duration: 0.5s, @timing-function: ease, @delay: 5s) {
+	transition: @arguments;
+	-moz-transition: @arguments;
+	-webkit-transition: @arguments;
+	-o-transition: @arguments;
+}
+
+.slide (@property: left, @duration: 0.5s, @timing-function: ease, @delay: 0s) {
 	transition: @arguments;
 	-moz-transition: @arguments;
 	-webkit-transition: @arguments;

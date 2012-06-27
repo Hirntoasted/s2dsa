@@ -6,11 +6,11 @@ class BootStrap {
     def init = { servletContext ->
 		switch(GrailsUtil.environment){
 			case "development":
-				def test_1 = new Player(name: "Franz Mustermann", about: "Bla", department: "Development", secret: "hallo123", s2name: "test_1")
+				def test_1 = new Player(name: "Franz Mustermann", about: "Bla", department: "Development", secret: "hallo123", s2name: "test_a")
 				test_1.save()
-				def test_2 = new Player(name: "Karl Mustermann", about: "Blubb", department: "Development", secret: "hallo456", s2name: "test_2")
+				def test_2 = new Player(name: "Karl Mustermann", about: "Blubb", department: "Development", secret: "hallo456", s2name: "test_b")
 				test_2.save()
-				def test_3 = new Player(name: "Max Mustermann", about: "Blubberererer", department: "Development", secret: "hallo789", s2name: "test_3")
+				def test_3 = new Player(name: "Max Mustermann", about: "Blubberererer", department: "Development", secret: "hallo789", s2name: "test_c")
 				test_3.save()
 			break
 			case "production":

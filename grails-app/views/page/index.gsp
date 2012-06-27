@@ -20,7 +20,7 @@
 			</g:form>
 		</div>
 		<div class="players${activeTab == 'players' ? ' active' : ''}">
-			<g:render template="/shared/playerList" model="['unlockedPlayers': participant.unlockedPlayers, 'unlockedPlayerCount': unlockedPlayerCount, 'playerCount': playerCount]" />
+			<g:render template="/shared/playerList" model="['unlockedPlayers': unlockedPlayerList, 'unlockedPlayerCount': unlockedPlayerCount, 'playerCount': playerCount]" />
 		</div>
 		<div class="topList${activeTab == 'topList' ? ' active' : ''}">
 			<g:render template="/shared/topList" model="['topList': topList]" />
@@ -29,9 +29,18 @@
 	<div class="footer">
 		<table>
 			<tr>
-				<td class="button${activeTab == 'transfer' ? ' active' : ''}" data-tab="transfer"><span>Transfer</span></td>
-				<td class="button${activeTab == 'players' ? ' active' : ''}" data-tab="players"><span><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</span>
-				<td class="button${activeTab == 'topList' ? ' active' : ''}" data-tab="topList"><span>Top 3</span>
+				<td class="button${activeTab == 'transfer' ? ' active' : ''}" data-tab="transfer">
+					<span class="marker">▼</span>
+					<span>Transfer</span>
+				</td>
+				<td class="button${activeTab == 'players' ? ' active' : ''}" data-tab="players">
+					<span class="marker">▼</span>
+					<span><span class="unlockedPlayersCount">${unlockedPlayerCount}</span>&nbsp;/&nbsp;${playerCount} haste</span>
+				</td>
+				<td class="button${activeTab == 'topList' ? ' active' : ''}" data-tab="topList">
+					<span class="marker">▼</span>
+					<span>Top 3</span>
+				</td>
 			</tr>
 		</table>
 	</div>
