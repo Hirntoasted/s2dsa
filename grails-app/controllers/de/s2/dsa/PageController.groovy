@@ -5,12 +5,6 @@ import s2dsa.Participant
 import s2dsa.UnlockedPlayer;
 
 class PageController {
-
-	def welcome() {
-		if (session.participant) {
-			return redirect(action: "index")
-		}
-	}
 	
     def index() {
 		if (!session.participant) {

@@ -112,14 +112,14 @@ form {
 			position: relative;
 			&>div {
 				position: relative;
-				width: 80%;
-				height: 800px;
+				width: 60%;
+				height: 600px;
 				overflow: hidden;
 				margin: 0 auto;
 			}
 			& .pager {
 				position: absolute;
-				top: 50%;
+				top: 10%;
 				cursor: pointer;
 				font-size: 32px;
 				&.prev {
@@ -137,6 +137,8 @@ form {
 				&>li {
 					position: absolute;
 					top: 0;
+					overflow: hidden;
+					cursor: pointer;
 					& img {
 						width: 100%;
 					}
@@ -149,7 +151,6 @@ form {
 						margin-top: -2em;
 						background-color: #ffffff;
 						opacity: 0.8;
-						cursor: pointer;
 						.slide-up;
 						&>span {
 							display: block;
@@ -160,10 +161,12 @@ form {
 							font-weight: bold;
 						}
 						& .department {
+							font-size: 13px;
 						}
 						& .about {
 							margin-top: 1em;
 							font-style: italic;
+							font-size: 13px;
 							&::before {
 								content: "„";
 							}

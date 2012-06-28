@@ -12,8 +12,8 @@ if (typeof jQuery !== 'undefined') {
 
 $(".message.fadeout").addClass("hide");
 
-$(".playerlist").on("click", ".active .info", function() {
-	$(this).toggleClass("show");
+$(".playerlist").on("click", "li.active", function() {
+	$(this).find(".info").toggleClass("show");
 });
 
 $(".footer").on("click", ".button:not[.active]", function(){

@@ -16,7 +16,7 @@
 				</g:each>
 			</ul>
 		</div>
-		<span class="pager prev">◄</span>
-		<span class="pager next">►</span>
+		<span class="pager prev">◀</span>
+		<span class="pager next">▶</span>
 	</div>
 </g:else>
