@@ -22,7 +22,7 @@ class BootStrap {
 				annkru.save()
 				def simhei = new Player(name: "Simone Heilmann", about: "Sei ein Sonnenschein durchs ganze Leben, denn der Sonne hat, kann Sonne geben.", department: "Account Management (Team: TUIfly.com)", secret: "krebs", s2name: "simhei")
 				simhei.save()
-				def corerb = new Player(name: "Cornelia Erbs", about: "Nenn mich gern Conni – mit \"i\".", department: "Senior User Experience Architect – Kreation Team 1", secret: "nordhessin", s2name: "corerb")
+				def corerb = new Player(name: "Cornelia Erbs", about: "Nenn mich gern Conni – mit \"i\".", department: "Senior User Experience Architect - Kreation Team 1", secret: "nordhessin", s2name: "corerb")
 				corerb.save()
 				def marspo = new Player(name: "Martina Spöhrer", about: "Wann wird's mal wieder richtig Sommer...", department: "Controlling", secret: "radau", s2name: "marspo")
 				marspo.save()
@@ -34,6 +34,8 @@ class BootStrap {
 				steher.save()
 				def alegie = new Player(name: "Alexander Giehl", about: "Läuft.", department: "Developer - Technik Team 9", secret: "rohlingspindel", s2name: "alegie")
 				alegie.save()
+				def tamjeu = new Player(name: "Tamara Jeutner", about: "Der Käse ist alt und schimmlig: Schon längere Zeit versuche ich, diesen Satz in allen (!) Sprachen der Welt zu beherrschen. Klappt bedingt gut: außer auf deutsch kann ich's noch auf griechisch sagen.", department: "User Experience - Kreation Team 1", secret: "superpony", s2name: "tamjeu")
+				tamjeu.save()
 			break
 		}
     }
