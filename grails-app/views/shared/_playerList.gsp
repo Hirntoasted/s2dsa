@@ -9,8 +9,6 @@
 		<span class="unlockedPlayerCount">${unlockedPlayerCount}</span> von ${playerCount} haste schon gesammelt:
 	</p>
 	<div class="playerlist js_gallery">
-		<span class="pager prev">◄</span>
-		<span class="pager next">►</span>
 		<div>
 			<ul class="players js_list" style="width:${unlockedPlayers.size * 100}%;left:-${unlockedPlayers.size *50}%;">
 				<g:each var="unlockedPlayer" in="${unlockedPlayers}" status="playerIndex">
@@ -18,5 +16,7 @@
 				</g:each>
 			</ul>
 		</div>
+		<span class="pager prev">◄</span>
+		<span class="pager next">►</span>
 	</div>
 </g:else>

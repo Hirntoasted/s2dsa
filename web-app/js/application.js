@@ -11,6 +11,11 @@ if (typeof jQuery !== 'undefined') {
 }
 
 $(".message.fadeout").addClass("hide");
+
+$(".playerlist").on("click", ".active .info", function() {
+	$(this).toggleClass("show");
+});
+
 $(".footer").on("click", ".button:not[.active]", function(){
 	var $this = $(this);
 	$this.addClass(activeClass).siblings().removeClass(activeClass);

@@ -102,6 +102,7 @@
     };
     
     $node.on("click", ".pager", function(e) {
+      $($list).find(".active .info").removeClass("show");
       $(this).is(".next") ? next() : prev();
       return false;
     });

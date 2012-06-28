@@ -113,7 +113,7 @@ form {
 			&>div {
 				position: relative;
 				width: 80%;
-				height: 400px;
+				height: 800px;
 				overflow: hidden;
 				margin: 0 auto;
 			}
@@ -139,6 +139,41 @@ form {
 					top: 0;
 					& img {
 						width: 100%;
+					}
+					& .info {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 100%;
+						left: 0;
+						margin-top: -2em;
+						background-color: #ffffff;
+						opacity: 0.8;
+						cursor: pointer;
+						.slide-up;
+						&>span {
+							display: block;
+							padding: 0.1em 0.5em;
+						}
+						& .name {
+							line-height: 2em;
+							font-weight: bold;
+						}
+						& .department {
+						}
+						& .about {
+							margin-top: 1em;
+							font-style: italic;
+							&::before {
+								content: "„";
+							}
+							&::after {
+								content: "”";
+							}
+						}
+						&.show {
+							top: 40%;
+						}
 					}
 				}
 			}
@@ -200,6 +235,20 @@ form {
 	-moz-transition: @arguments;
 	-webkit-transition: @arguments;
 	-o-transition: @arguments;
+}
+
+.slide-up (@property: top, @duration: 0.5s, @timing-function: ease, @delay: 0s) {
+	transition: @arguments;
+	-moz-transition: @arguments;
+	-webkit-transition: @arguments;
+	-o-transition: @arguments;
+}
+
+.shadow (@h-shadow: 0, @v-shadow: 0, @spread: 0.3em, @color: #000000) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+	-o-box-shadow: @arguments;
 }
 
 @media all and (min-width: 641px) {
