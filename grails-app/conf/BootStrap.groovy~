@@ -36,8 +36,6 @@ class BootStrap {
 				alegie.save()
 				def tamjeu = new Player(name: "Tamara Jeutner", about: " Frisches Auftreten und diffuse Haltung", department: "User Experience - Kreation Team 1", secret: "superpony", s2name: "tamjeu")
 				tamjeu.save()
-				def svehuc = new Player(name: "Svenja Hucker", about: " Lebensfroh ; -Freundlich ; -kleiner Tollpatsch; -Zielstrebig - ein Quatschkopf & - ein Stehaufmännchen", department: "comdirect, NEXT Team, Stage Entertainment", secret: "robbe", s2name: "svehuc")
-				svehuc.save()
 			break
 		}
     }
